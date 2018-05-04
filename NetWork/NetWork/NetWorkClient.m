@@ -64,13 +64,7 @@
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"error: %@%@", error.localizedDescription, path);
-        NSHTTPURLResponse * response = (NSHTTPURLResponse *)task.response;
-        if (task.state == NSURLSessionTaskStateCompleted && response.statusCode == 401) {
-            NSLog(@"ticket 401的接口%@", path);
-            
-        } else {
-            failure(error.localizedDescription);
-        }
+        failure(error.localizedDescription);
     }];
 }
 
@@ -111,13 +105,7 @@
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"error: %@%@", error.localizedDescription, path);
-        NSHTTPURLResponse * response = (NSHTTPURLResponse *)task.response;
-        if (task.state == NSURLSessionTaskStateCompleted && response.statusCode == 401) {
-            NSLog(@"ticket 401的接口%@", path);
-            
-        } else {
-            failure(error.localizedDescription);
-        }
+        failure(error.localizedDescription);
     }];
 }
 
